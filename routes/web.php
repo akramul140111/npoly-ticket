@@ -175,9 +175,11 @@ Route::match(['get', 'post'], '/botman', [BotManController::class,'handel']);
         Route::post('/editTicketInfo', [App\Http\Controllers\support\TicketController::class, 'editTicketInfo'])->name('editTicketInfo');
         Route::post('/editStatusInfo', [App\Http\Controllers\support\TicketController::class, 'editStatusInfo'])->name('editStatusInfo');
         Route::post('/editAssignInfo', [App\Http\Controllers\support\TicketController::class, 'editAssignInfo'])->name('editAssignInfo');
+        Route::post('/editReAssignInfo', [App\Http\Controllers\support\TicketController::class, 'editReAssignInfo'])->name('editReAssignInfo');
         Route::post('/updateTicketBasicInfo', [App\Http\Controllers\support\TicketController::class, 'updateBasicInfo'])->name('updateTicketBasicInfo');
         Route::post('/updateTicketStatusInfo', [App\Http\Controllers\support\TicketController::class, 'updateStatusInfo'])->name('updateTicketStatusInfo');
         Route::post('/updateTicketAssignInfo', [App\Http\Controllers\support\TicketController::class, 'updateAssignInfo'])->name('updateTicketAssignInfo');
+        Route::post('/updateTicketReAssignInfo', [App\Http\Controllers\support\TicketController::class, 'updateTicketReAssignInfo'])->name('updateTicketReAssignInfo');
         Route::get('/ticket/getProject/{clientId}', [App\Http\Controllers\support\TicketController::class, 'getPorject']);
         Route::get('/getEmployee/{departmentId}', [App\Http\Controllers\support\TicketController::class, 'getEmployee']);
 

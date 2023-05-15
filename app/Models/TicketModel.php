@@ -245,5 +245,60 @@ class TicketModel extends Model
         }
 
     }
+    public static function updateReAssignInfo($request){
+        $id = $request->ticket_id;
+
+        if($id && DB::table('npoly_tickets')->where('id', $id)->first()){
+            $ticketData = array(
+                "department_id"          => $request->department_id,
+                "employee_id"          => $request->employee_id,
+                "ticket_status"          => '234',
+                "previous_emp_id"        => $request->previoue_emp_id,
+                "previous_task_id"        => $request->previoue_task_id,
+                "reassign_reason"        => $request->reassign_reason,
+                "reassign_fg"        => 1,
+                "updated_by"        => Auth::user()->id,
+                "updated_at"        => date('Y-m-d H:i:s'),
+            );
+
+            DB::beginTransaction();
+            try {
+                DB::table('npoly_tickets')
+                    ->where('id', $id)
+                    ->update($ticketData);
+
+                $checkAssingInfo = DB::table('npoly_task_report')->select('*')->where('ticket_id',$id)->first();
+                if(empty($checkAssingInfo)){
+                    $ticktInfo = DB::table('npoly_tickets')->where('id', $id)->first();
+                    $taskData = array(
+                        "task_title"          => $ticktInfo->ticket_title,
+                        "task_desc"           => $ticktInfo->ticket_desc,
+                        "department_id"       => $request->department_id,
+                        "employee_id"         => $request->employee_id,
+                        "previous_ticket_id"         => $id,
+                        "reassing_task_fg"         => 1,
+                        "work_station"         => $request->work_station,
+                        "assign_date"         => date('Y-m-d',strtotime($request->assign_date)),
+                        'forecast_date'       => date('Y-m-d',strtotime($request->forecast_date)),
+                        'client_id'           => $ticktInfo->client_id,
+                        'project_id'          => $ticktInfo->project_id,
+                        'task_priority_id'    => $ticktInfo->priority_id,
+                        'ticket_id'           => $id,
+                        'active_status'       => 1,
+                        "created_by"          => Auth::user()->id,
+                        "created_at"          => date('Y-m-d H:i:s'),
+                    );
+                    $data = DB::table('npoly_task_report')->insert($taskData);
+                }
+
+                DB::commit();
+            } catch (\Throwable $e) {
+                DB::rollback();
+                throw $e;
+            }
+
+        }
+
+    }
 
 }

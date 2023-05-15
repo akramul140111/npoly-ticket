@@ -87,12 +87,28 @@
                                     <i class="glyphicon glyphicon-question-sign"></i>
                                     Ticket Status </a>
                             </li>
-
+                            <?php
+                                $taskComplete = DB::table('npoly_tickets as tkt')
+                                                ->leftJoin('npoly_task_report as tr','tkt.id','tr.ticket_id')
+                                                ->select('tkt.ticket_status','tr.task_complete')
+                                                ->where('tkt.id',$result->id)
+                                                ->first();
+                            ?>
+                            <?php if(!empty($taskComplete) && $taskComplete->ticket_status =='229' && $taskComplete->task_complete =='100'): ?>
+                                <li class="">
+                                    <a href="#" id="ticket_re_assign_info" data-action="<?php echo e(url('/editReAssignInfo')); ?>">
+                                        <i class="glyphicon glyphicon-user"></i>
+                                        Ticket Re Assign</a>
+                                </li>
+                            <?php else: ?>
                             <li class="">
                                 <a href="#" id="ticket_assign_info" data-action="<?php echo e(url('/getTicketAssignInfo')); ?>">
                                     <i class="glyphicon glyphicon-user"></i>
                                     Ticket Assign</a>
                             </li>
+                                <?php endif; ?>
+
+
                         </ul>
                     </div>
                     <!-- END MENU -->
@@ -295,6 +311,19 @@
         });
 
         $('#ticket_assign_info').click(function () {
+            var ticketId = $("#ticketId").val();
+            var action_uri = $(this).attr('data-action');
+            $.ajax({
+                type: "POST",
+                url: action_uri,
+                data: { ticketId:ticketId,_token:'<?php echo e(csrf_token()); ?>'},
+                success: function (data){
+                    $('.ticket-content').html(data);
+                }
+            });
+        });
+
+        $('#ticket_re_assign_info').click(function () {
             var ticketId = $("#ticketId").val();
             var action_uri = $(this).attr('data-action');
             $.ajax({

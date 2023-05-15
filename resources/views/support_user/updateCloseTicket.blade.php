@@ -31,7 +31,7 @@
             <div class="field item form-group">
                 <label class="col-form-label col-md-3 col-sm-3 label-align">Update Details*</label>
                 <div class="col-md-6 col-sm-6">
-                    <textarea class="form-control" name="close_update_details" required cols="5" rows="3" style="width: 500px !important;">{{$closeTicketInfo->close_update_details}}</textarea>
+                    <textarea class="form-control" name="close_update_details" required="required" cols="5" rows="3" style="width: 500px !important;">{{$closeTicketInfo->close_update_details}}</textarea>
                     <div>
                         <div style="width: 500px !important;"><span><b>Note:</b></span> <span>Do not submit any personal information, protected health information subject to HIPAA, any other sensitive personal information (such as payment card data), or U.S. federal government covered defense information (CDI) or controlled unclassified information (CUI) that requires protections greater than those specified in the Oracle GCS Security Practices link below.</span></div>
                     </div>
