@@ -253,6 +253,33 @@ class TicketController extends Controller
     public function updateAssignInfo(Request $request)
     {
         TicketModel::updateAssignInfo($request);
+        // mail send after assign ticket
+        $results = DB::table('npoly_tickets as tkt')
+            //->leftJoin('npoly_clients as clnt','tkt.client_id','clnt.client_id')
+            ->leftJoin('npoly_projects as pro','tkt.project_id','pro.project_id')
+            ->leftJoin('npoly_support_modules as mod','tkt.module_id','mod.module_id')
+            ->leftJoin('sa_lookup_data as lkp','tkt.priority_id','lkp.LOOKUP_DATA_ID')
+            ->leftJoin('sa_lookup_data as lkp1','tkt.ticket_status','lkp1.LOOKUP_DATA_ID')
+            ->leftJoin('sa_lookup_data as lkp2','tkt.issue_type_id','lkp2.LOOKUP_DATA_ID')
+            ->select('tkt.*','pro.project_name','mod.module_name','lkp.LOOKUP_DATA_NAME as priority_name','lkp1.LOOKUP_DATA_NAME as ticket_status','lkp2.LOOKUP_DATA_NAME as issue_type')
+            ->where('id',$request->ticket_id)
+            ->first();
+
+        $data['results']= $results ;
+        $data['ticket_id']= $request->ticket_id;
+        $data['title'] = 'Pending Ticket';
+        $data['form_email'] = 'ticket@nationalpolymer.net';
+        $data['to_email'] = 'azam.ali@nationalpolymer.net';
+        $data['form_name'] = 'Support User'.'('.$results->ticket_no.')';
+        $data['to_name'] = 'Npoly Group';
+
+        $sent = Mail::send('emails.ticket_mail', $data, function ($email) use ($data) {
+            $email->subject($data['title']);
+            $email->from('ticket@nationalpolymer.net','Npoly Ticket');
+            $email->to(['azam.ali@nationalpolymer.net']);
+            $email->cc(['azam.ali@nationalpolymer.net']);
+            //$email->bcc('azam.ali@nationalpolymer.net');
+        });
         Session::flash('success', 'Data Updated successfully!');
         return redirect()->route('ticketIndex');
     }

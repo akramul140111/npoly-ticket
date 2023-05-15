@@ -345,7 +345,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4 col-sm-4 ">
                 <div class="x_panel tile fixed_height_320">
                     <div class="x_title">
@@ -374,7 +373,6 @@
             </div>
         </div>
         <?php endif; ?>
-
     </div>
     <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>

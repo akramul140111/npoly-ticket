@@ -11,7 +11,7 @@
                 <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}" />
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="field item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align">Client :: Project*</label>
+                        <label class="col-form-label col-md-3 col-sm-3 label-align">Particulars*</label>
                         <div class="col-md-9 col-sm-9">
                             <select class="form-control" name="project_id">
                                 <option value="">Select One</option>

@@ -208,10 +208,6 @@ class TicketModel extends Model
                 "updated_at"        => date('Y-m-d H:i:s'),
             );
 
-
-
-
-
             DB::beginTransaction();
             try {
                 DB::table('npoly_tickets')
