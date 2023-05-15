@@ -1,0 +1,267 @@
+/****************************************************
+    Author: Md. Salaquzzaman <salaquzzaman@atilimited.net>
+    Modified date: 12-02-2022
+    Purpose: Custom style set.
+*****************************************************/
+
+.custom-table-border td {
+    padding: 3px;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+}
+.custom-table-border thead th {
+    padding: 10px;
+}
+
+
+/* Custom Style by Salaquzzaman */
+.mb-0{margin-bottom:0px}
+.mb-5{margin-bottom:5px}
+.mb-10{margin-bottom:10px}
+.mb-15{margin-bottom:15px}
+.mb-20{margin-bottom:20px}
+.mb-25{margin-bottom:25px}
+.mb-30{margin-bottom:30px}
+.mb-35{margin-bottom:35px}
+.mb-40{margin-bottom:40px}
+.mb-45{margin-bottom:45px}
+.mb-50{margin-bottom:50px}
+
+.mt-0{margin-top:0px}
+.mt-5{margin-top:5px}
+.mt-10{margin-top:10px}
+.mt-15{margin-top:15px}
+.mt-20{margin-top:20px}
+.mt-25{margin-top:25px}
+.mt-30{margin-top:30px}
+.mt-35{margin-top:35px}
+.mt-40{margin-top:40px}
+.mt-45{margin-top:45px}
+.mt-50{margin-top:50px}
+
+.mr-0{margin-right:0px}
+.mr-5{margin-right:5px}
+.mr-10{margin-right:10px}
+.mr-15{margin-right:15px}
+.mr-20{margin-right:20px}
+.mr-25{margin-right:25px}
+.mr-30{margin-right:30px}
+.mr-35{margin-right:35px}
+.mr-40{margin-right:40px}
+.mr-45{margin-right:45px}
+.mr-50{margin-right:50px}
+
+.ml-0{margin-left:0px}
+.ml-5{margin-left:5px}
+.ml-10{margin-left:10px}
+.ml-15{margin-left:15px}
+.ml-20{margin-left:20px}
+.ml-25{margin-left:25px}
+.ml-30{margin-left:30px}
+.ml-35{margin-left:35px}
+.ml-40{margin-left:40px}
+.ml-45{margin-left:45px}
+.ml-50{margin-left:50px}
+
+.pb-0{padding-bottom:0px}
+.pb-5{padding-bottom:5px}
+.pb-10{padding-bottom:10px}
+.pb-15{padding-bottom:15px}
+.pb-20{padding-bottom:20px}
+.pb-25{padding-bottom:25px}
+.pb-30{padding-bottom:30px}
+.pb-35{padding-bottom:35px}
+.pb-40{padding-bottom:40px}
+.pb-45{padding-bottom:45px}
+.pb-50{padding-bottom:50px}
+
+.pt-0{padding-top:0px}
+.pt-5{padding-top:5px}
+.pt-10{padding-top:10px}
+.pt-15{padding-top:15px}
+.pt-20{padding-top:20px}
+.pt-25{padding-top:25px}
+.pt-30{padding-top:30px}
+.pt-35{padding-top:35px}
+.pt-40{padding-top:40px}
+.pt-45{padding-top:45px}
+.pt-50{padding-top:50px}
+
+.pr-0{padding-right:0px}
+.pr-5{padding-right:5px}
+.pr-10{padding-right:10px}
+.pr-15{padding-right:15px}
+.pr-20{padding-right:20px}
+.pr-25{padding-right:25px}
+.pr-30{padding-right:30px}
+.pr-35{padding-right:35px}
+.pr-40{padding-right:40px}
+.pr-45{padding-right:45px}
+.pr-50{padding-right:50px}
+
+.pl-0{padding-left:0px}
+.pl-5{padding-left:5px}
+.pl-10{padding-left:10px}
+.pl-15{padding-left:15px}
+.pl-20{padding-left:20px}
+.pl-25{padding-left:25px}
+.pl-30{padding-left:30px}
+.pl-35{padding-left:35px}
+.pl-40{padding-left:40px}
+.pl-45{padding-left:45px}
+.pl-50{padding-left:50px}
+
+.text-align-center{text-align:center !important}
+.text-align-left{text-align:left !important}
+.text-align-right{text-align:right !important}
+.text-align-justify{text-align:justify !important}
+
+.width-100p{width:100%}
+
+.font-weight-normal{font-weight:normal}
+.font-weight-bold{font-weight:bold}
+.bold{font-weight:bold}
+.underline{text-decoration:underline}
+.clearfix:{clear:both}
+
+/* Alert box position fixing */
+.alert{
+    position: absolute;
+    width: 100%;
+}
+
+
+.approved-status{
+    color: blue;
+    text-align: center;
+}
+
+/*  Template customization by salaquzzaman@atilimited.net  */
+
+
+/* @font-face {
+    font-family: DroidSans;
+    src: url(fonts/DroidSans.ttf);
+}
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: Lato-Regular;
+    src: url(fonts/Lato-Regular.ttf);
+}
+@font-face {
+    font-weight: 100;
+    font-family: OpenSans-Semibold;
+    src: url(fonts/OpenSans-Semibold.ttf);
+} */
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url(fonts/OpenSans-Regular.ttf);
+}
+body{
+    font-family: OpenSans-Regular;
+    font-size: 13.5px;
+    /* color: #636d76; */
+    color: #3f454a;
+    background: #203040;
+}
+.form-control{font-size: 13.5px !important;}
+
+.left_col { background: #203040; }
+.nav_title{ background: #203040; }
+
+.nav.child_menu li{ font-size: 13px; }
+.nav.child_menu li a{ font-size: 13px; }
+/* .btn-info{background-color: #45AAF2; border-color: #45AAF2;}
+.btn-info:hover{background-color: #3598DF; border-color: #3598DF;} */
+
+.btn-info{background-color: #8F9FBC; border-color: #8F9FBC;}
+.btn-info:hover{background-color: #8190ab; border-color: #8190ab;}
+table .btn-sm{padding: .18rem .45rem;}
+
+.page-title .title_left h3{ color:#262626; }
+.x_title h2{ font-weight: bold; }
+.fc-center h2{
+    color: #007BFF !important;
+    font-weight: bold;
+    font-size: 20px;
+}
+.table{color:#131518;}
+.dropdown-menu {font-size:13px}
+body .container.body .right_col{background: #F4F6FA;} /*#F2F3F9*/
+.nav_menu{
+    background: #EDEDED;
+    border-bottom: none;
+    box-shadow: 0 4px 2px -2px rgb(230, 228, 228);
+}
+.x_panel{border:none}
+.btn{font-size: 14px;}
+
+.sidebar-footer{ display: none; }
+table.dataTable thead th, table.dataTable thead td{border-bottom: none;}
+table.table-bordered.dataTable th{border-top: 0;}
+/* thead tr{background-color: #fbded8;} */
+.user-profile img{border:1px solid #ccc;}
+
+/* scrollber start NOT WORKING */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(218, 216, 216);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(165, 164, 164);
+}
+/* scrollber end */
+
+.input-group-addon{
+    padding: 3px 12px;
+}
+
+/* .btn:active{
+    box-shadow: inset 1px 1px 10px #333 !important;
+} */
+
+/* Side Menu Customization */
+.nav.side-menu > li.active > a {
+    background: #000;
+    border-left: 4px solid #3C8DBC;
+}
+.nav.side-menu > li.current-page, .nav.side-menu > li.active {
+    border-right: 4px solid #1ABB9C;
+}
+.nav li.current-page {
+    background: #2d3f50;
+}
+
+/* Sidebar phone view */
+.nav-sm .nav.side-menu li a{
+    font-size: 15px;
+}
+.nav-sm .container.body .col-md-3.left_col{
+    width:80px'
+}
+
+.x_title{
+    border-bottom: none;
+    padding:0;
+    /* padding: 1px 5px 6px; */
+    /* margin-bottom: 10px; */
+    background-color: aliceblue;
+}
+
+.side-menu li a:hover{ color:#fff}
+

@@ -1,0 +1,361 @@
+/*--------------------------------------------------------------
+# Banner
+--------------------------------------------------------------*/
+.banner-pic-1 img {
+    width: 100%;
+}
+.banner-pic-2 img {
+    width: 80%;
+    height: 5em;
+}
+.banner {
+    align-self: center;
+}
+.banner h1 {
+    font-size: 205%;
+    /* text-align-last: center; */
+    text-align: -webkit-center;
+}
+@media screen and (max-width: 1000px) {
+    .banner-pic-1 img {
+        width: 70%;
+    }
+    .banner-pic-1 {
+        text-align: -webkit-center;
+        -webkit-writing-mode: unset;
+    }
+    .banner-pic-2 img {
+        width: 50%;
+    }
+    .banner-pic-2 {
+        text-align: -webkit-center;
+        -webkit-writing-mode: unset;
+    }
+    .banner h1 {
+        font-size: 170%;
+    }
+}
+/* @media screen and (max-width: 1000px) {
+  .banner h1 {
+    font-size: 135%;
+  }
+} */
+@media screen and (max-width: 700px) {
+    .banner h1 {
+        font-size: 115%;
+    }
+}
+@media screen and (max-width: 576px) {
+    .banner-pic-1 img {
+        display: none;
+    }
+    .banner-pic-2 img {
+        width: 10%;
+        text-align: center;
+        height: 85%;
+    }
+    .banner-pic-2 {
+        text-align: center;
+    }
+
+    .banner h1 {
+        font-size: 128%;
+        text-align-last: center;
+    }
+}
+/*--------------------------------------------------------------
+# Navbar
+--------------------------------------------------------------*/
+@media screen and (max-width: 1200px) {
+    .nav-menu > ul > li {
+        padding: 10px 0 10px 10px;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar.fixed-top .navbar-collapse,
+    .navbar.sticky-top .navbar-collapse {
+        overflow-y: auto;
+        max-height: 90vh;
+        margin-top: 10px;
+    }
+}
+
+/*--------------------------------------------------------------
+# footer
+--------------------------------------------------------------*/
+.footer-info p {
+    font-size: 12px !important;
+}
+.text-right {
+    text-align: right !important;
+    margin-right: 4%;
+}
+.footer-ati-1 {
+    color: red;
+}
+.footer-ati-2 {
+    color: green;
+}
+/*--------------------------------------------------------------
+# Megamenu
+--------------------------------------------------------------*/
+
+.dropdownMega {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdownMega .dropbtn {
+    font-size: 14px;
+    border: none;
+    color: #555555;
+    padding: 10px 0px 0px 25px;
+    background-color: inherit;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: "Roboto";
+    transition: 0.3s;
+    display: block;
+    position: relative;
+}
+
+/* .navbar a:hover,
+.dropdownMega:hover .dropbtn {
+  background-color: red;
+} */
+
+.dropdownMega-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+    left: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdownMega-content .headerMega {
+    background: red;
+    padding: 16px;
+    color: white;
+}
+
+.dropdownMega:hover .dropdownMega-content {
+    display: block;
+}
+
+/* Create three equal columns that floats next to each other */
+.columnMega {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    background-color: white;
+    height: 300px;
+    margin-top: 1%;
+}
+
+.columnMega a {
+    float: none;
+    color: black;
+    padding: 7px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: small;
+}
+
+.columnMega a:hover {
+    background-color: #ddd;
+}
+
+/* Clear floats after the columns */
+.rowMega:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1200px) {
+    .dropdownMega .dropbtn {
+        padding: 10px 0px 0px 12px;
+    }
+}
+@media screen and (max-width: 990px) {
+    .dropdownMega .dropbtn {
+        padding: 10px 0px 0px 20px;
+        font-size: medium;
+        text-transform: capitalize;
+        font-weight: normal;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .columnMega {
+        width: 100%;
+        height: auto;
+    }
+}
+.columnMega h3 {
+    font-size: large;
+    text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
+# Quick Link
+--------------------------------------------------------------*/
+.quick-link {
+    float: right;
+    padding-bottom: 0%;
+}
+.quick-link a {
+    font-size: smaller;
+    font-weight: 700;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}
+.quick-link-div {
+    background: darkgreen;
+    border-radius: 0px 0px 0px 50px;
+}
+.quick-link-align {
+    left: -50px !important;
+}
+.quick-link-a {
+    color: aliceblue !important;
+}
+
+@media screen and (max-width: 1000px) {
+    .navbar-nav {
+        padding-left: 50px;
+    }
+}
+/*--------------------------------------------------------------
+# Search
+--------------------------------------------------------------*/
+/* .header-search {
+  position: absolute;
+  z-index: 100;
+} */
+.header-search input[type="text"] {
+    width: 32%;
+    box-sizing: border-box;
+    border: 2px solid;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: floralwhite;
+    background-repeat: no-repeat;
+    padding: 1.5%;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    float: right;
+    border-color: powderblue;
+    margin-right: 3%;
+    outline: 0px;
+}
+
+.header-search input[type="text"]:focus {
+    width: 80%;
+}
+.header-search input {
+    color: antiquewhite !important;
+}
+.header-search i {
+    float: right;
+    font-size: large;
+    margin-top: 3%;
+}
+
+.top-header-right label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    margin-top: 3%;
+}
+.top-header-right select {
+    font-size: small;
+    background: transparent;
+    border-color: cyan;
+    padding: 5%;
+    border: none;
+    border: 0px;
+    outline: 0px;
+}
+
+.webmail-button {
+    background: none;
+    margin-left: 4%;
+    border-radius: 4px;
+    font-size: 100%;
+    border: solid 0.2px;
+    border-color: aqua;
+    color: currentcolor;
+    font-weight: 400;
+}
+
+/*--------------------------------------------------------------
+# Facility Section
+--------------------------------------------------------------*/
+.container-facility {
+    position: relative;
+}
+
+.container-facility img {
+    vertical-align: middle;
+    width: 100%;
+    height: 10em;
+}
+
+.container-facility .content-facility {
+    position: absolute;
+    bottom: 35px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    text-align: -webkit-center;
+}
+.content-facility a {
+    font-size: x-large;
+    color: aliceblue;
+    text-decoration: none;
+}
+/*--------------------------------------------------------------
+# Announcement Section
+--------------------------------------------------------------*/
+.announce-div {
+    padding: 2%;
+    border: ridge 0.5px gainsboro;
+}
+.announce-view-div {
+    place-content: center;
+}
+.announce-view-div a {
+    color: azure;
+}
+/*--------------------------------------------------------------
+# News and Events Section
+--------------------------------------------------------------*/
+.carousel-inner img {
+    width: 100%;
+    height: 10em;
+}
+.carousel-inner p {
+    font-size: small;
+}
+.controls-top {
+    text-align-last: center;
+    font-size: xx-large;
+}
+.controls-top a {
+    color: blue;
+}
+
+.background-color-bread-crambs{
+    background: #215f00; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #215f00, #e4e4d9); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #215f00, #e4e4d9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  

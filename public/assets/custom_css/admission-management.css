@@ -1,0 +1,208 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+   body
+   {
+       font-family: 'Open Sans', sans-serif;
+   }
+   
+   .fb-profile img.fb-image-lg{
+       z-index: 0;
+       width: 100%;  
+       margin-bottom: 10px;
+   }
+   
+   .fb-image-profile
+   {
+       margin: -90px 10px 20px 80px;
+       z-index: 9;
+       width: 20%; 
+   }
+   
+   /***
+   Bootstrap Line Tabs by @keenthemes
+   A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+   Licensed under MIT
+   ***/
+   
+   /* Tabs panel */
+   .tabbable-panel {
+     border:1px solid #eee;
+     padding: 10px;
+   }
+   
+   /* Default mode */
+   .tabbable-line > .nav-tabs {
+     border: none;
+     margin: 0px;
+   }
+   .tabbable-line > .nav-tabs > li {
+     margin-right: 2px;
+   }
+   .tabbable-line > .nav-tabs > li > a {
+     border: 0;
+     margin-right: 0;
+     color: #737373;
+   }
+   .tabbable-line > .nav-tabs > li > a > i {
+     color: #a6a6a6;
+   }
+   .tabbable-line > .nav-tabs > li.open, .tabbable-line > .nav-tabs > li:hover {
+     border-bottom: 0px solid white;
+   }
+   .tabbable-line > .nav-tabs > li.open > a, .tabbable-line > .nav-tabs > li:hover > a {
+     border: 0;
+     background: none !important;
+     color: #333333;
+   }
+   .tabbable-line > .nav-tabs > li.open > a > i, .tabbable-line > .nav-tabs > li:hover > a > i {
+     color: #a6a6a6;
+   }
+   .tabbable-line > .nav-tabs > li.open .dropdown-menu, .tabbable-line > .nav-tabs > li:hover .dropdown-menu {
+     margin-top: 0px;
+   }
+   .tabbable-line > .nav-tabs > li.active {
+     border-bottom: 0px solid white;
+     position: relative;
+   }
+   .tabbable-line > .nav-tabs > li.active > a {
+     border: 0 !important;
+     color: #333333;
+   }
+   .tabbable-line > .nav-tabs > li.active > a > i {
+     color: #404040;
+   }
+   .tabbable-line > .tab-content {
+     margin-top: -3px;
+     background-color: #fff;
+     border: 0;
+     border-top: 1px solid #eee;
+     padding: 15px 0;
+   }
+   .portlet .tabbable-line > .tab-content {
+     padding-bottom: 0;
+   }
+   
+   /* Below tabs mode */
+   
+   .tabbable-line.tabs-below > .nav-tabs > li {
+     border-top: 4px solid transparent;
+   }
+   .tabbable-line.tabs-below > .nav-tabs > li > a {
+     margin-top: 0;
+   }
+   .tabbable-line.tabs-below > .nav-tabs > li:hover {
+     border-bottom: 0;
+     border-top: 0px solid white;
+   }
+   .tabbable-line.tabs-below > .nav-tabs > li.active {
+     margin-bottom: -2px;
+     border-bottom: 0;
+     border-top: 4px solid #f3565d;
+   }
+   .tabbable-line.tabs-below > .tab-content {
+     margin-top: -10px;
+     border-top: 0;
+     border-bottom: 1px solid #eee;
+     padding-bottom: 15px;
+   }
+   
+   .menu_title {
+       padding: 15px 10px;
+       border-bottom: 1px solid #eee;
+       margin: 0 5px;
+   }
+   
+   
+   @media (max-width:768px){
+       
+   .fb-profile-text>h1{
+       font-weight: 700;
+       font-size:16px;
+   }
+   
+   .fb-image-profile
+   {
+       margin: -45px 10px 0px 25px;
+       z-index: 9;
+       width: 20%; 
+   }
+   }
+   
+   label{
+     font-size:14px;
+     font-weight: bold;
+   }
+   
+   img {
+     border-radius: 8px;
+   }
+
+
+   /* name button */
+
+   
+
+.profile-name-button{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  /* Created by http://grohit.com/  */
+  
+  .profile-name-button a {
+    text-decoration: none;
+    border: 2px solid #010100;
+    padding: 15px;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  span {
+    position: relative;
+    /* z-index coz when we put bg to before and after this span text will not be visible */
+    z-index: 3;
+  }
+  
+  /* Button 1 styles */
+  
+  .profile-name-button a::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -2px;
+    width: calc(100% + 6px);
+    /*100% plus double the times left values*/
+    height: calc(100% - 10px);
+    background-color: #ffffff;
+    transition: all 0.5s ease-in-out;
+    transform: scaleY(1);
+  }
+  
+  .profile-name-button a:hover::before{
+    transform: scaleY(0);
+  }
+  
+  .profile-name-button a::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: -5px;
+    width: calc(100% - 10px);
+    /*100% plus double the times left values*/
+    height: calc(100% + 10px);
+    background-color: #ffffff;
+    transition: all 0.5s ease-in-out;
+    transform: scaleX(1);
+  }
+  /* Created by http://grohit.com/  */
+  
+  .profile-name-button a:hover::after{
+    transform: scaleX(0);
+  }

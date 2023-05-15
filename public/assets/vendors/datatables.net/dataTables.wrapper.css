@@ -1,0 +1,58 @@
+/* important code for datatable button grouping */
+.dt-button embed {
+    outline: none;
+  }
+  
+  div.dt-buttons {
+    position: relative;
+    float: left;
+  }
+  div.dt-buttons.buttons-right {
+    float: right;
+  }
+  
+  div.dataTables_layout_cell div.dt-buttons {
+    float: none;
+  }
+  div.dataTables_layout_cell div.dt-buttons.buttons-right {
+    float: none;
+  }
+
+/* Button style for datatable */
+.buttons-collection{
+    border: 1px solid #ced4da;
+    background-color: #F2F2F2;
+    padding: 7px 14px;
+    border-radius: 0px !important;
+    margin-right: 8px !important;
+}
+.buttons-collection:hover{
+    background-color: #ecebeb;
+}
+/* sub button */
+.dt-button-collection li{
+    text-align: center;
+    padding: 5px 8px;
+    border: 1px solid #ccc !important;
+
+    /* box-shadow: inset 1px 1px 3px #999; */
+    background-color: rgba(0, 0, 0, 0.1);
+    background: -webkit-linear-gradient(top, rgba(128, 95, 95, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: -moz-linear-gradient(top, rgba(128, 95, 95, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: linear-gradient(top, rgba(128, 95, 95, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+}
+.dt-button-collection li:hover{
+    cursor: pointer;
+    background: #f5f4f4;
+}
+.dt-button-collection a{
+    color: #212529 !important;
+    font-size: 13px !important;
+}
+.dt-button-collection{
+    background-color: #ffffff !important;
+    padding: 6px !important;
+    border: 1px solid #ccc !important;
+}
+
+  

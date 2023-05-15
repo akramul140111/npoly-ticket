@@ -1,0 +1,15 @@
+.custom-table-border thead th {
+     padding: 0px;
+}
+.block-tbl td, .block-tbl th {
+    padding: 0px;
+    vertical-align: top; 
+    border-top: 1px solid #dee2e6;
+    padding-right: 5px;
+    padding-top: 5px;
+}
+
+.block-tbl thead th {
+    vertical-align: middle;
+    border-bottom: 2px solid #dee2e6;
+}
