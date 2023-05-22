@@ -22,8 +22,9 @@
 <style>
     .Password-from {
         color: white;
-        background: #9ACBE1;
-
+        background: #1032ba;
+        background: -webkit-linear-gradient(to right, #556270, #122ebd);
+        background: linear-gradient(to right, #556270, #183fca);
     }
 
 </style>
