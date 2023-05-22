@@ -102,12 +102,13 @@
                     <table class="table">
                         <tr>
                             <th>To*</th>
-                            <td><?php echo e($mailInfo->report_to_name); ?></td>
+                            <td><?php if(!empty($mailInfo->report_to_name)): ?><?php echo e($mailInfo->report_to_name); ?><?php endif; ?></td>
 
                         </tr>
                         <tr>
                             <th>CC *</th>
                            <td>
+                               <?php if(!empty($mailInfo->cc_to)): ?>
                                <?php
                                $ccEmployee = DB::select("select employee_name from npoly_employees where employee_id in($mailInfo->cc_to)");
                                $employeeName = [];
@@ -118,6 +119,7 @@
                                $employeeNameIn = implode(',',$employeeName);
                                echo $employeeNameIn;
                                ?>
+                               <?php endif; ?>
 
 
                            </td>
@@ -125,6 +127,7 @@
                         <tr>
                             <th>BCC * </th>
                             <td>
+                                <?php if(!empty($mailInfo->bcc_to)): ?>
                                 <?php
                                     $ccEmployee = DB::select("select employee_name from npoly_employees where employee_id in($mailInfo->bcc_to)");
                                     $employeeName = [];
@@ -135,9 +138,10 @@
                                     $employeeNameIn = implode(',',$employeeName);
                                     echo $employeeNameIn;
                                 ?>
+                               <?php endif; ?>
                             </td>
-                            <input type="hidden" name="cc_to" value="<?php echo e($mailInfo->cc_to_name); ?>"/>
-                            <input type="hidden" name="bcc_to" value="<?php echo e($mailInfo->bcc_to); ?>"/>
+                            <input type="hidden" name="cc_to" value="<?php if(!empty($mailInfo->cc_to_name)): ?><?php echo e($mailInfo->cc_to_name); ?> <?php endif; ?>"/>
+                            <input type="hidden" name="bcc_to" value="<?php if(!empty($mailInfo->bcc_to)): ?><?php echo e($mailInfo->bcc_to); ?><?php endif; ?>"/>
                         </tr>
 
                         <tr>

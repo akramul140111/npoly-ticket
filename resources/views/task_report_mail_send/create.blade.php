@@ -101,12 +101,13 @@
                     <table class="table">
                         <tr>
                             <th>To*</th>
-                            <td>{{$mailInfo->report_to_name}}</td>
+                            <td>@if(!empty($mailInfo->report_to_name)){{$mailInfo->report_to_name}}@endif</td>
 
                         </tr>
                         <tr>
                             <th>CC *</th>
                            <td>
+                               @if(!empty($mailInfo->cc_to))
                                @php
                                $ccEmployee = DB::select("select employee_name from npoly_employees where employee_id in($mailInfo->cc_to)");
                                $employeeName = [];
@@ -117,6 +118,7 @@
                                $employeeNameIn = implode(',',$employeeName);
                                echo $employeeNameIn;
                                @endphp
+                               @endif
 
 
                            </td>
@@ -124,6 +126,7 @@
                         <tr>
                             <th>BCC * </th>
                             <td>
+                                @if(!empty($mailInfo->bcc_to))
                                 @php
                                     $ccEmployee = DB::select("select employee_name from npoly_employees where employee_id in($mailInfo->bcc_to)");
                                     $employeeName = [];
@@ -134,9 +137,10 @@
                                     $employeeNameIn = implode(',',$employeeName);
                                     echo $employeeNameIn;
                                 @endphp
+                               @endif
                             </td>
-                            <input type="hidden" name="cc_to" value="{{$mailInfo->cc_to_name}}"/>
-                            <input type="hidden" name="bcc_to" value="{{$mailInfo->bcc_to}}"/>
+                            <input type="hidden" name="cc_to" value="@if(!empty($mailInfo->cc_to_name)){{$mailInfo->cc_to_name}} @endif"/>
+                            <input type="hidden" name="bcc_to" value="@if(!empty($mailInfo->bcc_to)){{$mailInfo->bcc_to}}@endif"/>
                         </tr>
 
                         <tr>

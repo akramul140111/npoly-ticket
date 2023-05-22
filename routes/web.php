@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\AcademyOfficerController;
 use App\Http\Controllers\BotManController;
 use Illuminate\Http\Request;
 /*
@@ -41,7 +40,6 @@ Route::match(['get', 'post'], '/botman', [BotManController::class,'handel']);
         Auth::routes();
         Route::group(['middleware' => ['auth'],['prevent-back-history']], function(){
 
-            //start Admission Management route
         Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
         Route::get('/support_home', [App\Http\Controllers\HomeController::class, 'support_index'])->name('support_home');
 
@@ -92,9 +90,6 @@ Route::match(['get', 'post'], '/botman', [BotManController::class,'handel']);
         Route::post('/updateLevel/{id}', [App\Http\Controllers\security_access\ModuleManageController::class, 'updateLevel'])->name('updateLevel');
         Route::post('/insertPageLinkStatus', [App\Http\Controllers\security_access\ModuleManageController::class, 'insertPageLinkStatus'])->name('insertPageLinkStatus');
 
-              //end Modules Manage route
-
-        //end security and access setup
         // Modules Manage  add page
         Route::get('/addPage', [App\Http\Controllers\security_access\ModuleManageController::class, 'addPage'])->name('addPage');
         Route::get('/createPage', [App\Http\Controllers\security_access\ModuleManageController::class, 'createPage'])->name('createPage');
@@ -189,13 +184,10 @@ Route::match(['get', 'post'], '/botman', [BotManController::class,'handel']);
         Route::get('/supportTicketInfo', [App\Http\Controllers\support\SupportTicketController::class, 'supportTicketInfo'])->name('supportTicketInfo');
         Route::get('/getCloseTicket/{id}', [App\Http\Controllers\support\SupportTicketController::class, 'getCloseTicket'])->name('getCloseTicket');
         Route::get('/getTicketDetailsInfo/{id}', [App\Http\Controllers\support\SupportTicketController::class, 'getTicketDetailsInfo'])->name('getTicketDetailsInfo');
-        //Route::get('/updateTicketDetails/{id}', [App\Http\Controllers\support\SupportTicketController::class, 'updateTicketDetails'])->name('updateTicketDetails');
-        //Route::get('/updateTicketAttachment/{id}', [App\Http\Controllers\support\SupportTicketController::class, 'updateTicketAttachment'])->name('updateTicketAttachment');
         Route::match(array('get','post'),'/updateTicketDetails/{id}', [App\Http\Controllers\support\SupportTicketController::class, 'updateTicketDetails'])->name('updateTicketDetails');
         Route::match(array('get','post'),'/updateTicketAttachment/{id}', [App\Http\Controllers\support\SupportTicketController::class, 'updateTicketAttachment'])->name('updateTicketAttachment');
         Route::match(array('get','post'),'/updateCloseTicket/{id}', [App\Http\Controllers\support\SupportTicketController::class, 'updateCloseTicket'])->name('updateCloseTicket');
 
-        //Route::get('/updateCloseTicket/{id}', [App\Http\Controllers\support\SupportTicketController::class, 'updateCloseTicket'])->name('updateCloseTicket');
         Route::post('storeSupportTicketInfo', [App\Http\Controllers\support\SupportTicketController::class, 'storeSupportTicketInfo'])->name('storeSupportTicketInfo');
 
 
@@ -213,11 +205,10 @@ Route::match(['get', 'post'], '/botman', [BotManController::class,'handel']);
         Route::get('/updateTask/{id}', [App\Http\Controllers\task_report\TaskReportController::class, 'editTask'])->name('updateTask');
         Route::post('/updateTaskInfo', [App\Http\Controllers\task_report\TaskReportController::class, 'updateTask'])->name('updateTaskInfo');
         Route::get('/check_task_start_or_stop_status', [App\Http\Controllers\task_report\TaskReportController::class, 'checkStartStopStatus'])->name('check_task_start_or_stop_status');
-        //Route::post('/update_task_status', [App\Http\Controllers\task_report\TaskReportController::class, 'updateTaskStatus'])->name('update_task_status');
         Route::get('/update_task_status', [App\Http\Controllers\task_report\TaskReportController::class, 'updateTaskStatus'])->name('update_task_status');
 
-        Route::get('/studentInfo', [App\Http\Controllers\student_portal\StudentInfoController::class, 'index'])->name('studentInfo');
-        Route::post('storeStudentInfo', [App\Http\Controllers\student_portal\StudentInfoController::class, 'storeStudentInfo'])->name('storeStudentInfo');
+        //Route::get('/studentInfo', [App\Http\Controllers\student_portal\StudentInfoController::class, 'index'])->name('studentInfo');
+        //Route::post('storeStudentInfo', [App\Http\Controllers\student_portal\StudentInfoController::class, 'storeStudentInfo'])->name('storeStudentInfo');
 
         // Dept wises Task Report Route
         Route::get('/deptWiseTaskReportIndex', [App\Http\Controllers\task_report\TaskReportController::class, 'deptWiseTaskReportIndex'])->name('deptWiseTaskReportIndex');
@@ -254,7 +245,6 @@ Route::match(['get', 'post'], '/botman', [BotManController::class,'handel']);
          Route::get('/get_last_seven_days_task', [App\Http\Controllers\DashboardController::class, 'getLastSevenDaysTask'])->name('get_last_seven_days_task');
          Route::get('/task_details_specific_emp/{empId}', [App\Http\Controllers\DashboardController::class, 'taskDetailsSpecificEmp'])->name('task_details_specific_emp');
          Route::get('/task_details_last_seven_days/{empId}', [App\Http\Controllers\DashboardController::class, 'taskDetailsLast7Days'])->name('task_details_last_seven_days');
-
         });
 
 
