@@ -111,7 +111,7 @@ class SupportTicketModel extends Model
             'module_id'          => $request->module_id,
             //'system_lifecycle'          => $request->system_lifecycle,
             'contact_person'          => $request->contact_person,
-            'ticket_status'          => '238',
+            'ticket_status'          => '225',
             "support_user_id"        => Auth::user()->id,
             "created_by"        => Auth::user()->id,
             "created_at"        => date('Y-m-d H:i:s'),

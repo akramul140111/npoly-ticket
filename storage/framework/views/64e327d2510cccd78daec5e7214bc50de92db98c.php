@@ -32,11 +32,13 @@
                                 <td><?php echo e($result->project_name); ?></td>
                                 <td><?php echo e($result->task_title); ?></td>
                                 <td>
+                                    <?php if(!empty($result->assign_by)): ?>
                                     <?php
                                     $assignByName = DB::table('npoly_employees')->select('employee_name as assign_by')->where('employee_id',$result->assign_by)->first();
                                     ?>
                                     <?php echo e($assignByName->assign_by); ?>
 
+                                    <?php endif; ?>
                                 </td>
                                 <td><?php echo e(date('d-M-Y',strtotime($result->assign_date))); ?></td>
                                 <td>

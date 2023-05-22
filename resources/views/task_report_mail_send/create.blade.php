@@ -32,10 +32,12 @@
                                 <td>{{$result->project_name}}</td>
                                 <td>{{$result->task_title}}</td>
                                 <td>
+                                    @if(!empty($result->assign_by))
                                     @php
                                     $assignByName = DB::table('npoly_employees')->select('employee_name as assign_by')->where('employee_id',$result->assign_by)->first();
                                     @endphp
                                     {{$assignByName->assign_by}}
+                                    @endif
                                 </td>
                                 <td>{{date('d-M-Y',strtotime($result->assign_date))}}</td>
                                 <td>

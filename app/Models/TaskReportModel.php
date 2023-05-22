@@ -228,7 +228,7 @@ class TaskReportModel extends Model
                 $ticketId = DB::table('npoly_task_report')->select('ticket_id')->where('task_id',$id)->first();
                 if(!empty($ticketId)){
                     $updateTicketStatus = array(
-                        'ticket_status'=>'227'
+                        'ticket_status'=>'234'
                     );
                     DB::table('npoly_tickets')
                         ->where('id', $ticketId->ticket_id)

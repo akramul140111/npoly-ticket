@@ -47,6 +47,7 @@
         $wProgressTicket = DB::table('npoly_tickets')->where('ticket_status',227)->count();
         $notResolvedTicket = DB::table('npoly_tickets')->where('ticket_status',229)->count();
         $ResolvedTicket = DB::table('npoly_tickets')->where('ticket_status',228)->count();
+        $ReassignTicket = DB::table('npoly_tickets')->where('reassign_fg',1)->count();
     @endphp
     <div class="container">
         <div class="row">
@@ -119,11 +120,11 @@
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <a href="{{url('get_ticket_info/3')}}">
+                    <a href="{{url('get_ticket_info/1')}}">
                         <div class="ibox bg-warning color-white widget-stat">
                             <div class="ibox-body">
-                                <h2 class="m-b-5 font-strong">0</h2>
-                                <div class="m-b-5">On Hold</div><i class="fa fa-circle-o-notch widget-stat-icon"></i>
+                                <h2 class="m-b-5 font-strong">{{$ReassignTicket}}</h2>
+                                <div class="m-b-5">Reassign Ticket</div><i class="fa fa-circle-o-notch widget-stat-icon"></i>
                                 <div><i class="fa fa-leve-up m-r-5"></i></div>
                             </div>
                         </div>

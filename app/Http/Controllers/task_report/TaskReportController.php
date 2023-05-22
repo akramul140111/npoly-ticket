@@ -77,9 +77,9 @@ class TaskReportController extends Controller
                 ->where('tr.active_status',1)
                 ->where('tr.employee_id',Auth::user()->employee_id)
                 ->where('tr.department_id',Auth::user()->department_id)
-                //->where('tr.task_complete','!=',100)
                 ->where('tr.task_create_date',date('Y-m-d'))
                 ->orWhere('tr.task_complete', '<',100)
+                ->where('tr.employee_id','!=','0')
                 ->orderBy('tr.task_id','desc')
                 ->get();
         }

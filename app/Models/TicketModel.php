@@ -268,16 +268,16 @@ class TicketModel extends Model
                     ->update($ticketData);
 
                 $checkAssingInfo = DB::table('npoly_task_report')->select('*')->where('ticket_id',$id)->first();
-                if(empty($checkAssingInfo)){
+                if(!empty($checkAssingInfo)){
                     $ticktInfo = DB::table('npoly_tickets')->where('id', $id)->first();
                     $taskData = array(
                         "task_title"          => $ticktInfo->ticket_title,
                         "task_desc"           => $ticktInfo->ticket_desc,
                         "department_id"       => $request->department_id,
                         "employee_id"         => $request->employee_id,
-                        "previous_ticket_id"         => $id,
-                        "reassing_task_fg"         => 1,
-                        "work_station"         => $request->work_station,
+                        "previous_ticket_id"  => $id,
+                        "reassing_task_fg"    => 1,
+                        "work_station"        => !empty($request->work_station)?$request->work_station:'',
                         "assign_date"         => date('Y-m-d',strtotime($request->assign_date)),
                         'forecast_date'       => date('Y-m-d',strtotime($request->forecast_date)),
                         'client_id'           => $ticktInfo->client_id,

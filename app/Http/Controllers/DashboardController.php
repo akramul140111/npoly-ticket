@@ -33,17 +33,32 @@ class DashboardController extends Controller
             'tableTitle' => ''
         );
 
-        $results = DB::table('npoly_tickets as tkt')
-            ->leftJoin('sa_lookup_data as lkp', 'tkt.priority_id', '=', 'lkp.LOOKUP_DATA_ID')
-            ->leftJoin('sa_lookup_data as lkp1', 'tkt.ticket_status', '=', 'lkp1.LOOKUP_DATA_ID')
-            ->leftJoin('npoly_clients as clnt', 'clnt.client_id', '=', 'tkt.client_id')
-            ->leftJoin('npoly_projects as pro', 'pro.project_id', '=', 'tkt.project_id')
-            ->leftJoin('npoly_task_report as tskr', 'tskr.ticket_id', '=', 'tkt.id')
-            ->leftJoin('npoly_support_modules as tm', 'tm.module_id', '=', 'tkt.module_id')
-            ->select('tkt.*','lkp.LOOKUP_DATA_NAME as priorityName','clnt.client_name','pro.project_name','tskr.employee_id','tskr.task_complete','lkp1.LOOKUP_DATA_NAME as ticketStatus','tm.module_name')
-            ->where('ticket_status',$status)
-            ->orderBy('tkt.id','desc')
-            ->get();
+        if($status==1){
+            $results = DB::table('npoly_tickets as tkt')
+                ->leftJoin('sa_lookup_data as lkp', 'tkt.priority_id', '=', 'lkp.LOOKUP_DATA_ID')
+                ->leftJoin('sa_lookup_data as lkp1', 'tkt.ticket_status', '=', 'lkp1.LOOKUP_DATA_ID')
+                ->leftJoin('npoly_clients as clnt', 'clnt.client_id', '=', 'tkt.client_id')
+                ->leftJoin('npoly_projects as pro', 'pro.project_id', '=', 'tkt.project_id')
+                ->leftJoin('npoly_task_report as tskr', 'tskr.ticket_id', '=', 'tkt.id')
+                ->leftJoin('npoly_support_modules as tm', 'tm.module_id', '=', 'tkt.module_id')
+                ->select('tkt.*','lkp.LOOKUP_DATA_NAME as priorityName','clnt.client_name','pro.project_name','tskr.employee_id','tskr.task_complete','lkp1.LOOKUP_DATA_NAME as ticketStatus','tm.module_name')
+                ->where('reassign_fg',1)
+                ->orderBy('tkt.id','desc')
+                ->get();
+        }else{
+            $results = DB::table('npoly_tickets as tkt')
+                ->leftJoin('sa_lookup_data as lkp', 'tkt.priority_id', '=', 'lkp.LOOKUP_DATA_ID')
+                ->leftJoin('sa_lookup_data as lkp1', 'tkt.ticket_status', '=', 'lkp1.LOOKUP_DATA_ID')
+                ->leftJoin('npoly_clients as clnt', 'clnt.client_id', '=', 'tkt.client_id')
+                ->leftJoin('npoly_projects as pro', 'pro.project_id', '=', 'tkt.project_id')
+                ->leftJoin('npoly_task_report as tskr', 'tskr.ticket_id', '=', 'tkt.id')
+                ->leftJoin('npoly_support_modules as tm', 'tm.module_id', '=', 'tkt.module_id')
+                ->select('tkt.*','lkp.LOOKUP_DATA_NAME as priorityName','clnt.client_name','pro.project_name','tskr.employee_id','tskr.task_complete','lkp1.LOOKUP_DATA_NAME as ticketStatus','tm.module_name')
+                ->where('ticket_status',$status)
+                ->orderBy('tkt.id','desc')
+                ->get();
+        }
+
         return view('dashboard.ticket_dashboard',compact('header','results'));
     }
 
