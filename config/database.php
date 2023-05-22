@@ -46,30 +46,11 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-
-            /*'host' => '127.0.0.1',
-            'port' => env('DB_PORT', '3306'),
-            'database' => 'birdem_ams_pre',
-            'username' => 'root',
-            'password' => '',*/
-
             'host' => '127.0.0.1',
             'port' => '3306',
             'database' => 'npoly_ticket',
             'username' => 'root',
             'password' => '',
-
-            /*'host' => '192.168.0.106',
-            'port' => '3306',
-            'database' => 'salaq_birdem_uat',
-            'username' => 'salaquzzaman',
-            'password' => 'salaquzzaman#',*/
-
-            /*'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),*/
 
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',

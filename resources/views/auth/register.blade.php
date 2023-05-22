@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<style>    
+<style>
          .register-from{
-              background: #4ECDC4; 
-              background: -webkit-linear-gradient(to right, #556270, #4ECDC4); 
-              background: linear-gradient(to right, #556270, #4ECDC4); 
+              background: #4ECDC4;
+              background: -webkit-linear-gradient(to right, #556270, #4ECDC4);
+              background: linear-gradient(to right, #556270, #4ECDC4);
               }
    </style>
      <body class="login register-from">
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">        
+        <div class="col-md-8">
             <div class="card" style="border:8px solid white;border-radius: 15px;">
-            <img src="{{asset('images/birdem-general-hospital-banner_3_0.jpg')}}" style="height:100px" class=" align-self-center">
+            <img src="{{asset('images/Logo.png')}}" style="height:100px" class=" align-self-center">
                 <div class="card-header" style="text-align:center">{{ __('Register') }}</div>
 
                 <div class="card-body">

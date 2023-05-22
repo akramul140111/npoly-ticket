@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BIRDEM | </title>
+    <title>NPOLY | </title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ URL::asset('assets/vendors/bootstrap/dist/css/bootstrap.min.css') }}" />
     <!-- Font Awesome -->
@@ -39,7 +39,7 @@
                 <div style="text-align: center;line-height:0px">
                     <a href="#" class="site_title">
                         <img class="" style="height:50px !important;"
-                            src="{{url('images/birdem-general-hospital-banner-mail.jpg')}}">
+                            src="{{url('images/Logo.png')}}">
                     </a>
                 </div>
                 <div class="card-header" style="text-align: center">

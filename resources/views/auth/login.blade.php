@@ -151,21 +151,6 @@
                     </form>
                 </section>
             </div>
-            <!-- <div id="register" class="animate form registration_form">
-                <section class="login_content">
-                    <form>
-                        <h1>Create Account</h1>
-                        <div>
-                            <input type="text" class="form-control" placeholder="Username" required="" />
-                        </div>
-                        <div>
-                            <input type="email" class="form-control" placeholder="Email" required="" />
-                        </div>
-                        <div>
-                            <h1><i class="fa fa-paw"></i> BIRDEM </h1>
-                            <p>©2021 All Rights Reserved. BIRDEM .</p>
-                        </div>
-            </div> -->
 
             <div></div>
             </form>

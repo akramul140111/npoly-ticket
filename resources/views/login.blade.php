@@ -67,8 +67,8 @@
                 <div class="clearfix"></div>
                 <br />
                 <div>
-                  <h1><i class="fa fa-paw"></i> BIRDEM !</h1>
-                  <p>©2016 All Rights Reserved. BIRDEM . Privacy and Terms</p>
+                  <h1><i class="fa fa-paw"></i> NPOLY !</h1>
+                  <p>©{{date('Y')}} All Rights Reserved. NPOLY . Privacy and Terms</p>
                 </div>
               </div>
             </form>

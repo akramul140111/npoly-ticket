@@ -59,8 +59,10 @@
                                                 <th>Task Title</th>
                                                 <th>Task Description</th>
                                                 <th class="text-center">Task Info</th>
+                                                @if(Auth::user()->is_admin !=1)
                                                 <th>W.Status</th>
                                                 <th>Action</th>
+                                                @endif
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -192,6 +194,7 @@
 
                                                 </td>
 {{--                                                <td>{{date('d-M-Y',strtotime($result->forecast_date))}}</td>--}}
+                                                @if(Auth::user()->is_admin !=1)
                                                 <td>
                                                     <button @if($result->task_complete=='100') disabled @endif class=" @if($result->task_running=='1') btn btn-warning @else btn btn-success @endif taskStatus" value="{{$result->task_running}}">@if($result->task_running =='1') Stop @else Start @endif </button>
                                                     <input type="hidden" class="taskId" value="{{$result->task_id }}" id="taskId">
@@ -205,6 +208,7 @@
                                                             <i class="glyphicon glyphicon-edit"></i>
                                                         </button>
                                                     </td>
+                                                    @endif
                                             </tr>
                                             @endforeach
                                         </tbody>

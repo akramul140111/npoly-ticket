@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BIRDEM | </title>
+    <title>NPOLY | </title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ URL::asset('assets/vendors/bootstrap/dist/css/bootstrap.min.css') }}" />
     <!-- Font Awesome -->
@@ -83,7 +83,7 @@
 
                                     <div style="text-align: center">
                                         <br>
-                                        <h4> BIRDEM </h4>
+                                        <h4> NPOLY </h4>
 
                                     </div>
                                 </div>
