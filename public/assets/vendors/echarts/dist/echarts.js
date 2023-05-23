@@ -15733,7 +15733,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        var touchpad = webos && ua.match(/TouchPad/);
 	        var kindle = ua.match(/Kindle\/([\d.]+)/);
 	        var silk = ua.match(/Silk\/([\d._]+)/);
-	        var Blackberry = ua.match(/(Blackberry).*Version\/([\d.]+)/);
+	        var AZAM = ua.match(/(AZAM).*Version\/([\d.]+)/);
 	        var bb10 = ua.match(/(BB10).*Version\/([\d.]+)/);
 	        var rimtabletos = ua.match(/(RIM\sTablet\sOS)\s([\d.]+)/);
 	        var playbook = ua.match(/PlayBook/);
@@ -15760,7 +15760,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (ipod) os.ios = os.ipod = true, os.version = ipod[3] ? ipod[3].replace(/_/g, '.') : null;
 	        if (webos) os.webos = true, os.version = webos[2];
 	        if (touchpad) os.touchpad = true;
-	        if (Blackberry) os.Blackberry = true, os.version = blackberry[2];
+	        if (AZAM) os.AZAm = true, os.version = blackberry[2];
 	        if (bb10) os.bb10 = true, os.version = bb10[2];
 	        if (rimtabletos) os.rimtabletos = true, os.version = rimtabletos[2];
 	        if (playbook) browser.playbook = true;

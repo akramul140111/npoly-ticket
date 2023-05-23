@@ -122,6 +122,8 @@
                                                                 </td>
                                                             </tr>
                                                             <tr  class="" @if($result->task_complete > 0 && $result->task_create_date ==date('Y-m-d'))style="background-color: #e4f0e9 !important;" @else style="background-color: #f2f2f2" @endif>
+                                                                <input type="hidden" class="checkForeCastDate" value="{{date('Y-m-d',strtotime($result->forecast_date))}}"/>
+                                                                <input type="hidden" class="checkCurrentDate" value="{{date('Y-m-d')}}"/>
                                                                 <td @if(date('Y-m-d',strtotime($result->forecast_date)) < $foCheDate)style="color: red; @endif"><strong>Forecast Date</strong></td>
                                                                 <td @if(date('Y-m-d',strtotime($result->forecast_date)) < $foCheDate)style="color: red; @endif"><strong>:</strong></td>
                                                                 <td @if(date('Y-m-d',strtotime($result->forecast_date)) < $foCheDate)style="color: red; @endif">{{ !empty($result->forecast_date)?date('d-M-Y',strtotime($result->forecast_date)):'' }}</td>
@@ -228,66 +230,75 @@
            var taskId = $(this).closest('tr').find('#taskId').val();
            var taskStatus = $(this).val();
 
-           if(taskStatus == '1'){
-               let stopMsg = confirm('Do You Want To Stop This Task');
-               if(stopMsg ==true){
-                   var _token = '{{csrf_token()}}'
-                   $.ajax({
-                       type: 'get',
-                       url: '{{url("/update_task_status")}}',
-                       data: {_token: _token, taskId: taskId,taskStatus:taskStatus},
-                       success: function (data) {
-                           window.location.replace("{{url("/taskReportIndex")}}");
-                       }
-                   });
-               }else{
-                   return false;
+           var checkForecastDate = $(this).closest('tr').find('.checkForeCastDate').val();
+           var checkCurrenttDate = $(this).closest('tr').find('.checkCurrentDate').val();
+
+           if(checkCurrenttDate > checkForecastDate){
+               alert('Please Update Forecast Date')
+           }else{
+               if(taskStatus == '1'){
+                   let stopMsg = confirm('Do You Want To Stop This Task');
+                   if(stopMsg ==true){
+                       var _token = '{{csrf_token()}}'
+                       $.ajax({
+                           type: 'get',
+                           url: '{{url("/update_task_status")}}',
+                           data: {_token: _token, taskId: taskId,taskStatus:taskStatus},
+                           success: function (data) {
+                               window.location.replace("{{url("/taskReportIndex")}}");
+                           }
+                       });
+                   }else{
+                       return false;
+                   }
+               }else if(taskStatus == '0'){
+                   if(taskId !=='') {
+                       var _token = '{{csrf_token()}}'
+                       $.ajax({
+                           type: 'GET',
+                           url: '{{url("/check_task_start_or_stop_status")}}',
+                           data: { _token: _token,taskId:taskId },
+                           success: function (data) {
+                               if(data =='1'){
+                                   var anotherTask = confirm('Another Task Is Running Do You Want To Stop This Task');
+
+                                   if(anotherTask ==true){
+                                       $.ajax({
+                                           type: 'get',
+                                           url: '{{url("/update_task_status")}}',
+                                           data: {_token: _token, taskId: taskId,taskStatus:taskStatus},
+                                           success: function (data) {
+                                               console.log(data)
+                                               window.location.replace("{{url("/taskReportIndex")}}");
+                                           }
+                                       });
+                                   }else{
+                                       return false;
+                                   }
+                               }else{
+                                   let taskStartMst = confirm('Do You Want To Start The Task');
+                                   if(taskStartMst ==true){
+                                       $.ajax({
+                                           type: 'get',
+                                           url: '{{url("/update_task_status")}}',
+                                           data: {_token: _token, taskId: taskId,taskStatus:taskStatus},
+                                           success: function (data) {
+                                               console.log(data)
+                                               window.location.replace("{{url("/taskReportIndex")}}");
+                                           }
+                                       });
+                                   }else{
+                                       return  false;
+                                   }
+
+                               }
+                           }
+                       });
+                   }
                }
-           }else if(taskStatus == '0'){
-              if(taskId !=='') {
-                  var _token = '{{csrf_token()}}'
-                  $.ajax({
-                      type: 'GET',
-                      url: '{{url("/check_task_start_or_stop_status")}}',
-                      data: { _token: _token,taskId:taskId },
-                      success: function (data) {
-                          if(data =='1'){
-                              var anotherTask = confirm('Another Task Is Running Do You Want To Stop This Task');
-
-                              if(anotherTask ==true){
-                                  $.ajax({
-                                      type: 'get',
-                                      url: '{{url("/update_task_status")}}',
-                                      data: {_token: _token, taskId: taskId,taskStatus:taskStatus},
-                                      success: function (data) {
-                                          console.log(data)
-                                          window.location.replace("{{url("/taskReportIndex")}}");
-                                      }
-                                  });
-                              }else{
-                                  return false;
-                              }
-                          }else{
-                              let taskStartMst = confirm('Do You Want To Start The Task');
-                              if(taskStartMst ==true){
-                                  $.ajax({
-                                      type: 'get',
-                                      url: '{{url("/update_task_status")}}',
-                                      data: {_token: _token, taskId: taskId,taskStatus:taskStatus},
-                                      success: function (data) {
-                                          console.log(data)
-                                          window.location.replace("{{url("/taskReportIndex")}}");
-                                      }
-                                  });
-                              }else{
-                                  return  false;
-                              }
-
-                          }
-                      }
-                  });
-              }
            }
+
+
 
 
 

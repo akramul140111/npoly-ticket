@@ -167,7 +167,7 @@
             <div class="col-md-4 col-sm-4 ">
                 <div class="x_panel tile fixed_height_320">
                     <div class="x_title">
-                        <h2>App Versions</h2>
+                        <h2>Ticket Info</h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -184,88 +184,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                        <h4>App Usage across versions</h4>
-                        <div class="widget_summary">
-                            <div class="w_left w_25">
-                                <span>0.1.5.2</span>
-                            </div>
-                            <div class="w_center w_55">
-                                <div class="progress">
-                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 66%;">
-                                        <span class="sr-only">60% Complete</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w_right w_20">
-                                <span>123k</span>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-
-                        <div class="widget_summary">
-                            <div class="w_left w_25">
-                                <span>0.1.5.3</span>
-                            </div>
-                            <div class="w_center w_55">
-                                <div class="progress">
-                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-                                        <span class="sr-only">60% Complete</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w_right w_20">
-                                <span>53k</span>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="widget_summary">
-                            <div class="w_left w_25">
-                                <span>0.1.5.4</span>
-                            </div>
-                            <div class="w_center w_55">
-                                <div class="progress">
-                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
-                                        <span class="sr-only">60% Complete</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w_right w_20">
-                                <span>23k</span>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="widget_summary">
-                            <div class="w_left w_25">
-                                <span>0.1.5.5</span>
-                            </div>
-                            <div class="w_center w_55">
-                                <div class="progress">
-                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 5%;">
-                                        <span class="sr-only">60% Complete</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w_right w_20">
-                                <span>3k</span>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="widget_summary">
-                            <div class="w_left w_25">
-                                <span>0.1.5.6</span>
-                            </div>
-                            <div class="w_center w_55">
-                                <div class="progress">
-                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
-                                        <span class="sr-only">60% Complete</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w_right w_20">
-                                <span>1k</span>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
+                        <canvas id="mybarChart"></canvas>
                     </div>
                 </div>
             </div>
@@ -273,7 +192,7 @@
             <div class="col-md-4 col-sm-4 ">
                 <div class="x_panel tile fixed_height_320 overflow_hidden">
                     <div class="x_title">
-                        <h2>Device Usage</h2>
+                        <h2>Employee Info</h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                             </li>
@@ -306,7 +225,7 @@
                             </tr> -->
                             <tr>
                                 <td>
-                                    <canvas class="canvasDoughnut" height="140" width="140" style="margin: 15px 10px 10px 0"></canvas>
+                                    <canvas class="canvasDoughnut1" height="140" width="140" style="margin: 15px 10px 10px 0"></canvas>
                                 </td>
                                 <td>
                                     <table class="tile_info">
@@ -314,31 +233,35 @@
                                             <td>
                                                <a href="{{url('/allEmployeeIndex')}}"> <p title="Total Employee"><i class="fa fa-square blue"></i>Total Emp </p></a>
                                             </td>
-                                            <td> <a href="{{url('/allEmployeeIndex')}}">9</a></td>
+                                            <td> <a href="{{url('/allEmployeeIndex')}}"><span id="">9
+                                                    <input type="hidden" id="totalEmp" value="9">
+                                                    </span></a></td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <a href="{{url('/total_present_employee')}}"> <p title="Total Present"><i class="fa fa-square green"></i>Present</p></a>
                                             </td>
-                                            <td> <a href="{{url('/total_present_employee')}}">{{$totalPresent}}</a></td>
+                                            <td> <a href="{{url('/total_present_employee')}}">
+                                                  <span id="totalPresent">{{$totalPresent}}</span>
+                                                </a></td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <a href="{{url('/total_absent_employee')}}"><p title="Total Absent"><i class="fa fa-square purple"></i>Absent</p></a>
                                             </td>
-                                            <td><a href="{{url('/total_absent_employee')}}">{{$totalAbsent}}</a></td>
+                                            <td><a href="{{url('/total_absent_employee')}}"><span id="totalAbsent">{{$totalAbsent}}</span></a></td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <a href="{{url('/total_working_hour')}}"><p title="Total Working Hours"><i class="fa fa-square aero"></i>T.W.H </p></a>
                                             </td>
-                                            <td><a href="{{url('/total_working_hour')}}">{{$totalHours}}</a></td>
+                                            <td><a href="{{url('/total_working_hour')}}"><span id="totalHour">{{$totalHours}}</span></a></td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <a href="{{url('/get_last_seven_days_task')}}"> <p title="Last 7 Days Work"><i class="fa fa-square red"></i>Last 7 Days</p></a>
                                             </td>
-                                            <td><a href="{{url('/get_last_seven_days_task')}}">{{floor($totaHourlast7days->total_hours / 3600)}}</a></td>
+                                            <td><a href="{{url('/get_last_seven_days_task')}}"><span id="last7Days">{{floor($totaHourlast7days->total_hours / 3600)}}</span></a></td>
                                         </tr>
                                     </table>
                                 </td>
@@ -367,9 +290,7 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                        <div class="dashboard-widget-content">
-                            <div id="chartContainer" style="width: 100%; height: 200px"></div>
-                        </div>
+                            <div id="echart_pie" style="height:278px;margin-top: -20px !important;"></div>
                     </div>
                 </div>
             </div>
@@ -390,33 +311,62 @@
             $('.dashboardInfo').css('display','none')
         })
     </script>
-    <script type="text/javascript">
-        window.onload = function() {
-            $("#chartContainer").CanvasJSChart({
-                axisY: {
-                    title: "Products in %"
-                },
-                legend :{
-                    verticalAlign: "center",
-                    horizontalAlign: "right"
-                },
-                data: [
-                    {
-                        type: "pie",
-                        showInLegend: true,
-                        toolTipContent: "{label} <br/> {y} %",
-                        indexLabel: "{y} %",
-                        dataPoints: [
-                            { label: "Samsung",  y: 30.3, legendText: "Samsung"},
-                            { label: "Apple",    y: 19.1, legendText: "Apple"  },
-                            { label: "Huawei",   y: 4.0,  legendText: "Huawei" },
-                            { label: "LG",       y: 3.8,  legendText: "LG Electronics"},
-                            { label: "Lenovo",   y: 3.2,  legendText: "Lenovo" },
-                            { label: "Others",   y: 39.6, legendText: "Others" }
-                        ]
+    <script>
+        $(document).ready(function(){
+            if ($('.canvasDoughnut1').length) {
+                var totalWork = $('#totalHour').text();
+                var absent = $('#totalAbsent').text();
+                var last7Days = $('#last7Days').text();
+                var present = $('#totalPresent').text();
+                var totalEmp = $('#totalEmp').val();
+
+                var chart_doughnut_settings = {
+                    type: 'doughnut',
+                    tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+                    data: {
+                        labels: [
+                            "Tot.Work Hour",
+                            "Absent",
+                            "Last 7 Days Work",
+                            "Present",
+                            "Tot.Employee"
+                        ],
+                        datasets: [{
+                            data: [totalWork, absent, last7Days, present, totalEmp],
+                            backgroundColor: [
+                                "#BDC3C7",
+                                "#9B59B6",
+                                "#E74C3C",
+                                "#26B99A",
+                                "#3498DB"
+                            ],
+                            hoverBackgroundColor: [
+                                "#CFD4D8",
+                                "#B370CF",
+                                "#E95E4F",
+                                "#36CAAB",
+                                "#49A9EA"
+                            ]
+                        }]
+                    },
+                    options: {
+                        legend: false,
+                        responsive: false
                     }
-                ]
-            });
-        }
+                }
+
+                $('.canvasDoughnut1').each(function () {
+
+                    var chart_element = $(this);
+                    var chart_doughnut = new Chart(chart_element, chart_doughnut_settings);
+
+                });
+
+            }
+
+
+
+        })
     </script>
+
 @endsection

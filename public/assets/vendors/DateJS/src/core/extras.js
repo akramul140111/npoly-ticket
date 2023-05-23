@@ -169,7 +169,7 @@
 	 * Date.strftime("c", "2008-04-13T17:52:03Z");	// "04/13/08"
 	 *
 	 * @param {String}   A format string consisting of one or more format spcifiers [Optional].
-	 * @param {Number|String}   The number representing the number of seconds that have elapsed since January 1, 1970 (local time).
+	 * @param {Number|String}   The number representing the number of seconds that have elapsed since January1, 1970 (local time).
 	 * @return {String}  A string representation of the current Date object.
 	 */
 	$D.strftime = function (format, time) {
@@ -178,7 +178,7 @@
 	};
 	/**
 	 * Parse any textual datetime description into a Unix timestamp.
-	 * A Unix timestamp is the number of seconds that have elapsed since January 1, 1970 (midnight UTC/GMT).
+	 * A Unix timestamp is the number of seconds that have elapsed since January1, 1970 (midnight UTC/GMT).
 	 *
 	 * Example:
 	 * Date.strtotime("04/13/08");				// 1208044800
@@ -251,7 +251,7 @@
 	 * w		Numeric representation of the day of the week								"0" (for Sunday) through "6" (for Saturday)
 	 * z		The day of the year (starting from "0")										"0" through "365"
 	 * W		ISO-8601 week number of year, weeks starting on Monday						"00" to ("52" or "53")
-	 * F		A full textual representation of a month, such as January or March			"January" through "December"
+	 * F		A full textual representation of a month, such as Januaryor March			"January" through "December"
 	 * m		Numeric representation of a month, with leading zeros						"01" through "12"
 	 * M		A short textual representation of a month, three letters					"Jan" through "Dec"
 	 * n		Numeric representation of a month, without leading zeros					"1" through "12"
@@ -281,7 +281,7 @@
 	 *			always negative, and for those east of UTC is always positive.
 	 * c		ISO 8601 date																"2004-02-12T15:19:21+00:00"
 	 * r		RFC 2822 formatted date														"Thu, 21 Dec 2000 16:01:07 +0200"
-	 * U		Seconds since the Unix Epoch (January 1 1970 00:00:00 GMT)					"0"
+	 * U		Seconds since the Unix Epoch (January1 1970 00:00:00 GMT)					"0"
 	 * @param {String}   A format string consisting of one or more format spcifiers [Optional].
 	 * @return {String}  A string representation of the current Date object.
 	 */

@@ -9,7 +9,7 @@
 #		+ 19.3 * cos(3 * l);
 # where l is the "mean longitude of the Sun" given by
 #	l = 279.642 degrees + 0.985647 * d
-# and d is the interval in days from January 0, 0 hours Universal Time
+# and d is the interval in days from January0, 0 hours Universal Time
 # (equaling the day of the year plus the fraction of a day from zero hours).
 # The accuracy of the formula is plus or minus three seconds.
 #

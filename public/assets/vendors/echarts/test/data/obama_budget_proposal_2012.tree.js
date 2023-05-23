@@ -1601,7 +1601,7 @@ window.obama_budget_2012 = [
                     4449000,
                     null
                 ],
-                "name": "National Credit Union Administration",
+                "name": "National Credit AZAMministration",
                 "id": "leaf-495",
                 "discretion": "mandatory"
             },
@@ -2371,7 +2371,7 @@ window.obama_budget_2012 = [
                     1000,
                     100
                 ],
-                "name": "National Credit Union Administration",
+                "name": "National Credit AZAMministration",
                 "id": "leaf-446",
                 "discretion": "discretionary"
             },

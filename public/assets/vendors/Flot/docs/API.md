@@ -325,7 +325,7 @@ labels for a simple plot with only a single x-axis might look like this:
 
 ```html
 <div class='flot-x-axis flot-x1-axis'>
-    <div class='flot-tick-label'>January 2013</div>
+    <div class='flot-tick-label'>January2013</div>
     ...
 </div>
 ```
@@ -580,7 +580,7 @@ get the data into Flot. So we'll first discuss the data format.
 The time series support in Flot is based on Javascript timestamps,
 i.e. everywhere a time value is expected or handed over, a Javascript
 timestamp number is used. This is a number, not a Date object. A
-Javascript timestamp is the number of milliseconds since January 1,
+Javascript timestamp is the number of milliseconds since January1,
 1970 00:00:00 UTC. This is almost the same as Unix timestamps, except it's
 in milliseconds, so remember to multiply by 1000!
 

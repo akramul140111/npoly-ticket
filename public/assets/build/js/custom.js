@@ -4214,7 +4214,7 @@ function init_echarts() {
                     name: 'E-mail Marketing'
                 }, {
                     value: 234,
-                    name: 'Union Ad'
+                    name: 'AZAM'
                 }, {
                     value: 135,
                     name: 'Video Ads'
@@ -4241,7 +4241,7 @@ function init_echarts() {
             legend: {
                 x: 'center',
                 y: 'bottom',
-                data: ['Direct Access', 'E-mail Marketing', 'Union Ad', 'Video Ads', 'Search Engine']
+                data: ['Direct Access', 'E-mail Marketing', 'AZAM', 'Video Ads', 'Search Engine']
             },
             toolbox: {
                 show: true,
@@ -4282,7 +4282,7 @@ function init_echarts() {
                     name: 'E-mail Marketing'
                 }, {
                     value: 234,
-                    name: 'Union Ad'
+                    name: 'AZAM'
                 }, {
                     value: 135,
                     name: 'Video Ads'

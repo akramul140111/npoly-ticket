@@ -258,6 +258,7 @@ class TaskReportModel extends Model
                 "task_desc"        => $request->task_desc,
                 "work_station"        => $request->work_station,
                 "task_complete"        => $request->task_complete,
+                "fdate_change_reason"        => !empty($request->fdate_change_reason)?$request->fdate_change_reason:"",
                 //"assign_by"    => $request->assign_by,
                 //"employee_id"    => $request->assign_to,
                 "assign_date"    => date('Y-m-d',strtotime($request->assign_date)),
@@ -314,7 +315,7 @@ class TaskReportModel extends Model
                         $data['ticket_id']= $ticketId->ticket_id ;
                         $data['title'] = 'Resolved Ticket';
                         $data['form_email'] = 'ticket@nationalpolymer.net';
-                        $data['to_email'] = 'azam.ali@nationalpolymer.net';
+                        $data['to_email'] = 'Union Ad.ali@nationalpolymer.net';
                         $data['form_name'] = 'Support User'.'('.$results->ticket_no.')';
                         $data['to_name'] = 'Npoly Group';
 

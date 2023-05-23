@@ -317,14 +317,14 @@ Zone	Indian/Cocos	6:27:40	-	LMT	1900
 # states:
 #
 # The end of daylight saving scheduled initially for the 26th of February 2012
-# has been brought forward to the 22nd of January 2012.
+# has been brought forward to the 22nd of January2012.
 # The commencement of daylight saving will remain unchanged and start
 # on the  23rd of October, 2011.
 
 # From the Fiji Government Online Portal (2012-08-21) via Steffen Thorsen:
 # The Minister for Labour, Industrial Relations and Employment Mr Jone Usamate
 # today confirmed that Fiji will start daylight savings at 2 am on Sunday 21st
-# October 2012 and end at 3 am on Sunday 20th January 2013.
+# October 2012 and end at 3 am on Sunday 20th January2013.
 # http://www.fiji.gov.fj/index.php?option=com_content&view=article&id=6702&catid=71&Itemid=155
 #
 # From Paul Eggert (2012-08-31):
@@ -1512,7 +1512,7 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 # The Federated States of Micronesia - Visitor Information
 # </a> (1999-01-26)
 # that Truk and Yap are UTC+10, and Ponape and Kosrae are UTC+11.
-# We don't know when Kosrae switched from UTC+12; assume January 1 for now.
+# We don't know when Kosrae switched from UTC+12; assume January1 for now.
 
 
 # Midway
@@ -1649,7 +1649,7 @@ Zone	Pacific/Wallis	12:15:20 -	LMT	1901
 # From Sione Moala-Mafi (2001-09-20) via Rives McDow:
 # At 2:00am on the first Sunday of November, the standard time in the Kingdom
 # shall be moved forward by one hour to 3:00am.  At 2:00am on the last Sunday
-# of January the standard time in the Kingdom shall be moved backward by one
+# of Januarythe standard time in the Kingdom shall be moved backward by one
 # hour to 1:00am.
 
 # From Pulu 'Anau (2002-11-05):

@@ -62,7 +62,7 @@ Leap	2012	Jun	30	23:59:60	+	S
 # e-mail    : (E-Mail Removed)
 # http://hpiers.obspm.fr/eop-pc
 #
-# Paris, 5 January 2012
+# Paris, 5 January2012
 #
 #
 # Bulletin C 43
@@ -85,7 +85,7 @@ Leap	2012	Jun	30	23:59:60	+	S
 #
 # The difference between UTC and the International Atomic Time TAI is:
 #
-# from 2009 January 1, 0h UTC, to 2012 July 1  0h UTC  : UTC-TAI = - 34s
+# from 2009 January1, 0h UTC, to 2012 July 1  0h UTC  : UTC-TAI = - 34s
 # from 2012 July 1,    0h UTC, until further notice    : UTC-TAI = - 35s
 #
 # Leap seconds can be introduced in UTC at the end of the months of December
