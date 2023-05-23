@@ -315,7 +315,7 @@ class TaskReportModel extends Model
                         $data['ticket_id']= $ticketId->ticket_id ;
                         $data['title'] = 'Resolved Ticket';
                         $data['form_email'] = 'ticket@nationalpolymer.net';
-                        $data['to_email'] = 'Union Ad.ali@nationalpolymer.net';
+                        $data['to_email'] = 'azam.ali@nationalpolymer.net';
                         $data['form_name'] = 'Support User'.'('.$results->ticket_no.')';
                         $data['to_name'] = 'Npoly Group';
 
